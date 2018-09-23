@@ -1,0 +1,12 @@
+version: '3'
+services:
+  master:
+    image: phyrone/cloudnet-master
+    volumes:
+     - ./Cloudnet-Master:/app/
+  wrapper:
+    image: phyrone/cloudnet-master
+    volumes:
+     - ./Cloudnet-Wrapper:/app/
+    ports:
+     - "25565:25565"
