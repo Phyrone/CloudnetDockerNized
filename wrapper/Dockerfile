@@ -1,4 +1,5 @@
 FROM openjdk:11-jre
-WORKDIR /
-RUN wget -O /Cloudnet-Wrapper.jar https://ci.cloudnetservice.eu/job/CloudNetService/job/CloudNet/job/master/lastSuccessfulBuild/artifact/cloudnet-wrapper/target/CloudNet-Wrapper.jar
-CMD ["java","-jar","Cloudnet-Wrapper.jar"]
+WORKDIR /app/
+RUM mkdir /app/ && mkdir /jar/
+RUN wget -O /jar/Cloudnet-Wrapper.jar https://ci.cloudnetservice.eu/job/CloudNetService/job/CloudNet/job/master/lastSuccessfulBuild/artifact/cloudnet-wrapper/target/CloudNet-Wrapper.jar
+CMD ["java","-jar","/jar/Cloudnet-Wrapper.jar"]
